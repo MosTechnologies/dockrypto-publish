@@ -9,6 +9,10 @@
     <meta name="author" content="">
 
     <title>DocKrypto</title>
+    
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -24,17 +28,17 @@
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
+            <ul class="nav sidebar-nav" id="lmenu">
                 <li class="sidebar-brand">
-                    <a href="#">
-                        DocKrypto
+                    <a href="#" data-toggle="tab">
+                        DocKrypto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </a>
                 </li>
                 <li>
-                    <a href="#">Download</a>
+                    <a href="#s-list" data-toggle="tab">Download&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                 </li>
                 <li>
-                    <a href="#">Documentation</a>
+                    <a href="#d-list" data-toggle="tab">Documentation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                 </li>
             </ul>
         </div>
@@ -48,15 +52,28 @@
                     <br>
                     <br>
                     <br>
-                    <h3>Latest Version</h3>
-                    <ul>
-                    <li><a href="https://s3-ap-southeast-2.amazonaws.com/doc-krypto/reader-installer/doc_krypto_v01_00_03_beta.msi">doc_krypto_v01_00_03_beta.msi</a></li>
-                    </ul>
-                        
-                    <h3>Templates</h3>
-                    <ul>
-                    <li><a href="https://s3-ap-southeast-2.amazonaws.com/doc-krypto/templates/example_template.zip">example_template</a></li>
-                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane in active" id="s-list">
+                            <h3>Latest Version</h3>
+                            <ul>
+                            <li><a href="https://s3-ap-southeast-2.amazonaws.com/doc-krypto/reader-installer/doc_krypto_v01_01_01.msi">doc_krypto_v01_01_01.msi</a></li>
+                            </ul>
+                                
+                            <h3>Templates</h3>
+                            <ul>
+                            <li><a href="https://s3-ap-southeast-2.amazonaws.com/doc-krypto/templates/Certified+Blank+Template.zip">Certified Blank Template.zip</a></li>
+                            <li><a href="https://s3-ap-southeast-2.amazonaws.com/doc-krypto/templates/Left+Hand+Footer+Generic.zip">Left Hand Footer Generic.zip</a></li>
+                            <li><a href="https://s3-ap-southeast-2.amazonaws.com/doc-krypto/templates/Right+Hand+Footer+Generic.zip ">Right Hand Footer Generic.zip</a></li>
+                            <li><a href="https://s3-ap-southeast-2.amazonaws.com/doc-krypto/templates/Right+Hand+Header+Generic.zip ">Right Hand Header Generic.zip</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane" id="d-list">
+                            <h3>User Guide</h3>
+                            <ul>
+                            <li><a href="https://s3-ap-southeast-2.amazonaws.com/doc-krypto/user-guide/DocKrypto+User+Reference+Guide+2018_FA.pdf ">user_reference_guide.pdf</a></li>
+                            </ul>
+                        </div>
+                    </div>
                     <br>
                     <p><em>Thank you for using DocKrypto. For further information and support, please contact <a href="support@inpiasia.com" class="disabled">support@inpiasia.com</a></em></p>
                 </div>
@@ -68,10 +85,6 @@
     </div>
     <!-- /#wrapper -->
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Menu Toggle Script -->
     <script>
     $("#wrapper").toggleClass("toggled");
@@ -81,6 +94,11 @@
         $("#wrapper").toggleClass("toggled");
     });
     */
+    $("#lmenu li").on("click",function(){
+            var num = $(this).index();
+            console.log(num);
+            $("#s-list").tab("show");
+    });
     </script>
 
 </body>
